@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- event delegation -->
+    <ul id="itemId">
+        <li>hello hi</li>
+        <li>hello hi</li>
+        <li>hello hi</li>
+        <li>hello hi</li>
+        <li>hello hi</li>
+    </ul>
+</body>
+<script>
+const itemsList = document.getElementById('itemId');
+itemsList.addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI') {
+        console.log(`You clicked on ${event.target.textContent}`);
+    }
+});
+</script>
+</html>
