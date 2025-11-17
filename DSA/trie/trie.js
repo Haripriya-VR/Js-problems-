@@ -4,70 +4,70 @@
 // here prefix is not repeated
 
 
-class TireNode{
-    constructor(){
-        this.children ={}
-        this.isEOW =false
-    }
-}
-class Tire{
-    constructor(){
-        this.root = new TireNode()
-    }
+// class TireNode{
+//     constructor(){
+//         this.children ={}
+//         this.isEOW =false
+//     }
+// }
+// class Tire{
+//     constructor(){
+//         this.root = new TireNode()
+//     }
 
-    insert(word){
-        let node =this.root
-        for(let char of word){
-            if(!node.children[char]){
-                node.children[char]= new TireNode()
-            }
-            node = node.children[char]
-        }
+//     insert(word){
+//         let node =this.root
+//         for(let char of word){
+//             if(!node.children[char]){
+//                 node.children[char]= new TireNode()
+//             }
+//             node = node.children[char]
+//         }
         
-        node.isEOW = true
-    }
+//         node.isEOW = true
+//     }
 
-    search(word){
-        let node = this.root
-        for(let char of word){
-            if(!node.children[char]){
-                return false
-            }
-            node = node.children[char]
-        }
-        return node.isEOW
-    }
+//     search(word){
+//         let node = this.root
+//         for(let char of word){
+//             if(!node.children[char]){
+//                 return false
+//             }
+//             node = node.children[char]
+//         }
+//         return node.isEOW
+//     }
     
-    startwithPrefix(prefix){
-        let node = this.root
-        for(let char of prefix){
-            if(!node.children[char]){
-                return false
-            }
-            node = node.children[char]
-        }
+//     startwithPrefix(prefix){
+//         let node = this.root
+//         for(let char of prefix){
+//             if(!node.children[char]){
+//                 return false
+//             }
+//             node = node.children[char]
+//         }
        
-        return node.isEOW
-    }
-    _findAllWords(node, prefix) {
-        let words = [];
-        if (node.isEndOfWord) {
-            words.push(prefix);
-        }
-        for (let char in node.children) {
-            words = words.concat(this._findAllWords(node.children[char], prefix + char));
-        }
-        return words;
-    }
-}
+//         return node.isEOW
+//     }
+//     _findAllWords(node, prefix) {
+//         let words = [];
+//         if (node.isEndOfWord) {
+//             words.push(prefix);
+//         }
+//         for (let char in node.children) {
+//             words = words.concat(this._findAllWords(node.children[char], prefix + char));
+//         }
+//         return words;
+//     }
+// }
 
-const trie = new Tire()
-trie.insert("apple");
-console.log(trie.search("apple"));   
-console.log(trie.search("app"));     
-console.log(trie.startwithPrefix("app")); 
-trie.insert("app");
-console.log(trie.search("app"));     
+// const trie = new Tire()
+// trie.insert("apple");
+// console.log(trie.search("apple"));   
+// console.log(trie.search("app"));     
+// console.log(trie.startwithPrefix("app")); 
+// trie.insert("app");
+// console.log(trie.search("app"));     
 
 
 // =================================================

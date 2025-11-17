@@ -509,7 +509,26 @@
 // ====================================================
 
 
-
+// var lengthOfLongestSubstring = function(s) {
+//         let maxLength = 0;  // To store the length of the longest substring found
+//         let sub = '';       // To build the current substring without repeating characters
+    
+//         for (let i = 0; i < s.length; i++) {
+//             if (!sub.includes(s[i])) {  // If character is not in sub, add it
+//                 sub += s[i];
+//                 maxLength = Math.max(maxLength, sub.length);  // Update maxLength if sub length is greater
+//             } else {
+//                 // If character is already in sub, start a new substring starting after the first occurrence of the duplicate character
+//                 sub = sub.slice(sub.indexOf(s[i]) + 1) + s[i];
+//             }
+//         }
+    
+//         return maxLength;
+//     };
+    
+//     // Test the function
+//     const result = lengthOfLongestSubstring("abcabcbb");
+//     console.log(result);  // Expected output: 3
 
 
 

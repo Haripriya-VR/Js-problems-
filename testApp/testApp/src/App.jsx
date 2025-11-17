@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import UseState from './components/UseState';
 import UseReduce from './components/UseReducer';
 import UseEffecthook from './components/UseEffecthook';
+import HigherOrderComp from './components/HigherOrderComp';
 
 function App() {
 
@@ -12,10 +13,10 @@ function App() {
     <>
     <Router>
       <Routes>
-        <Route path='/' element={<UseState/>} />
-        <Route path='/about' element={<UseReduce/>}/>
+        <Route path='/' element={<HigherOrderComp/>} />
+        {/* <Route path='/about' element={<UseReduce/>}/>
         
-        <Route path='/useEffect' element={<UseEffecthook/>}/>
+        <Route path='/useEffect' element={<UseEffecthook/>}/> */}
       </Routes>
     </Router>
     

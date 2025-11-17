@@ -93,3 +93,14 @@
 
 
 // removeDuplicates(arr);
+
+
+const num = 12.4
+
+function numbers(num) {
+    return Number.isInteger(num)
+}
+
+const result = numbers(4.5)
+console.log(result);
+

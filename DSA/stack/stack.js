@@ -1,4 +1,5 @@
 // stack implementation
+// ----------------------
 
 class Node{
     constructor(value){
@@ -54,4 +55,5 @@ const input ='Hello'
 console.log(reverseString(input));
 
 // =================================================
+
 

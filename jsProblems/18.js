@@ -15,11 +15,11 @@
 // function reverseWords(sentence) {
 //     let words = sentence.split(' ');
 //     let reversedWords = [];
-    
+
 //     for (let i = words.length - 1; i >= 0; i--) {
 //         reversedWords.push(words[i]);
 //     }
-    
+
 //     return reversedWords.join(' ');
 // }
 
@@ -49,40 +49,52 @@
 // =========================================================
 // intersection of two arrays
 
-function intersectionOfArray(){
+var lengthOfLastWord = function (s) {
+    let length = 0;
+    let counting = false;
 
-}
+    for (let c of s) {
+        if (c !== ' ') {
+            if (!counting) {
+                counting = true;
+                length = 1;
+            } else {
+                length++;
+            }
+        } else {
+            counting = false;
+        }
+    }
+
+    return length;
+};
+
+
 
 // ===============================
-// missing number of an array
+// var lengthOfLongestSubstring = function(s) {
+//     let maxLength = 0;  // To store the length of the longest substring found
+//     let sub = '';       // To build the current substring without repeating characters
 
-let arr=[1,2,3,5,6]
-let counts =10
-function missingNumber(arr,count){
-    let missingNum=[]
-    for (let i = 1; i <= count; i++) {
-        let found=false
-      
-     for (let j = 0; j < arr.length; j++) {
-        if(i === arr[j]) {
-            found = true
-            break;
-        }
-     }
-     if(!found){
-        missingNum.push(i)
-     }
-         
-    }
-    arr.push(...missingNum)
-    return arr
-    
-}
+//     for (let i = 0; i < s.length; i++) {
+//         if (!sub.includes(s[i])) {  // If character is not in sub, add it
+//             sub += s[i];
+//             maxLength = Math.max(maxLength, sub.length);  // Update maxLength if sub length is greater
+//         } else {
+//             // If character is already in sub, start a new substring starting after the first occurrence of the duplicate character
+//             sub = sub.slice(sub.indexOf(s[i]) + 1) + s[i];
+//         }
+//     }
 
- const result = missingNumber(arr,counts)
- console.log(result);
- 
+//     return maxLength;
+// };
+
+// // Test the function
+// const result = lengthOfLongestSubstring("abcabcbb");
+// console.log(result);  // Expected output: 3
+
+
 
 // ========================================
-
+// ========================================
 

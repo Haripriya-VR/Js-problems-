@@ -24,6 +24,7 @@
 
 // console.log(fact(4));
 
+// ================================================
 
 // function fib(n){
 //     if(n ==0 ){
@@ -219,4 +220,16 @@
 
 // ===========================================================================
 
-
+// temporal dead Zone
+// ============================
+{
+    // TDZ starts at beginning of scope
+    const func = () => console.log(letVar); // OK
+  
+    // console.log(letVar);
+    
+    // Within the TDZ letVar access throws `ReferenceError`
+  
+    let letVar = 3; // End of TDZ (for letVar)
+    func(); // Called outside TDZ!
+  }

@@ -185,8 +185,24 @@ class LinkedList{
         }
     }
 
-    delete(value,index){
-        
+    delete(index) {
+        if (index < 0 || index >= this.size) {
+            return false;
+        }
+        let removedNode;
+        if (index === 0) {
+            removedNode = this.head;
+            this.head = this.head.next;
+        } else {
+            let prev = this.head;
+            for (let i = 0; i < index - 1; i++) {
+                prev = prev.next;
+            }
+            removedNode = prev.next;
+            prev.next = removedNode.next;
+        }
+        this.size--;
+        return removedNode.value;
     }
 
 
@@ -206,6 +222,7 @@ list.append(20)
 list.append(30)
 list.insert(1,2)
 list.prepend(40)
+// console.log("Deleted:", list.delete(1));
 list.display()
 
 
